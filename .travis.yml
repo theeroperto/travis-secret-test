@@ -1,0 +1,11 @@
+language: php
+
+env:
+  - SECRET_A=alpha
+
+before_script:
+  - echo $SECRET_A
+
+script:
+  - echo $SECRET_A
+
