@@ -12,3 +12,4 @@ script:
   - echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
   - echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
   - echo $SECRET_D $(echo $SECRET_D | cut -c1-2) - Encrypted ENV in .yml
+  - echo PULL REQUEST
