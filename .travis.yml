@@ -1,11 +1,16 @@
 language: php
 
+travis:
+  yml:
+    secure: W3+SBDohLB2KxKeC7Kv1f7CWfI39+r1dQsqmfMfRffqfznnpLWVbBlHXyawtzhE9mkAITBpYd3cE0Pub8F2tshPuQgiKlkdYRmUCLxJ2atDGZjQfY7Lm+SMWPMCP5rzFfmYUH74GvRUjQlU1IvrtKFaNldDIxXinTF4R6KBIYq1eZWiTDmssQyWxcZArfKBVKflhxB12sJihHnBw+nzFB9kWHvOCyLAJzEPVD1xlvBtUFr+gvTQL1skTsA7tWB5cfpf9F6+8AOFUM4F2SAo0d6GdiVOSCHnzB7lF2BT/+RBVrqOteMgjlQp2DMrsKRFiE+tqQYc+LRNk2UYS4Ff3DEs09RrIYAlXbOhLF4nosIYUhl07GHNlob0ZO6YV1Cmrk9F08u2ZS5AZoexfRjzt3OUt9xKAa/HCje0Cz6taumCl6dijCg/9pQMQNVPAiLk3qKDY+KVtZSpabeI6d+RqEQIJ8qMwXx5TLSv+kZpKgsWoFsuDxwxO4u4Kl0BZUeNBv0Y+sPI8RLNXtmWPqSiORxdXQi9UCJZycnaOfOC7/nc+drAtigMPfjIKpCqSdkfVUarE9+/4ewhESyS4kPoB+rc2IhSk0hv7BHVO6g0QSwIG5N+ZYRmQiT7otW0Nihl+cdKXSJAN9i2YJ+rvKMKrg/vjSF5gfUdgU+im1l4v+Is=
+
 env:
-  - SECRET_A=alpha
+- SECRET_A=alpha
 
 script:
-  - echo Safety -- alpha bravo charlie
+- echo Safety -- alpha bravo charlie delta
+- echo $SECRET_A $(echo $SECRET_A | cut -c1-2) - Plain ENV in .yml
+- echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
+- echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
+- echo $SECRET_D $(echo $SECRET_D | cut -c1-2) - Encrypted ENV in .yml
 
-  - echo $SECRET_A $(echo $SECRET_A | cut -c1-2) - Plain ENV in .yml
-  - echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
-  - echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
