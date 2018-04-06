@@ -5,7 +5,7 @@ env:
 
 script:
   - echo Safety -- alpha bravo charlie
-  - echo $SECRET_A - Plain ENV in .yml
-  - echo $SECRET_B - ENV in Travis shown in log
-  - echo $SECRET_C - ENV in Travis hidden from log
 
+  - echo $SECRET_A $(echo $SECRET_A | cut -c1-2) - Plain ENV in .yml
+  - echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
+  - echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
