@@ -1,10 +1,14 @@
+language: php
+
 env:
-  - SECRET_A=alpha
-  - secure: ieEhZRHMWnHSku/zT3WViR7Teknz/FGcD2JtrTf5NvHaIZjDyfmBCbXUzV8GpZbC8e/UmsWioMUQ8mkSkgXmh1WBwcafo6sRttNK5GVd7oCpNv5Aivdf7bWcYOuOha88bJ75O43iL89lRw53GQYi82/Q9qvYeBwVxtfyzt7qUXEUg/NNASBKe1vn0IhieYSofrikf7334h84jmRk+QYGex6hztgwg07Vji146Mq3XOrVDwgv0xd6BZ/XQjBCnUcBHvD/2sl0PxqiWD5zaQL1jwQKhURRzCQ1C8u0A19op9FA0e2tvO9QvMw/uXTgVE5q78IKFFAlAckHTRokxDMz8zj8Q+HtndVwRlsN5Vcz5MUk3cZ2nXYrT4ShNr/llphutMliPy8lRtWn02b4Wt82F/jFgfjR8l3Wnss/tnpL8XCbK968O5NYYY7XO4Kno4E2GnANvy7SSACV3i+OM+92iGWFCvyZWgsJR3iCdUKa5lyYgkIeSCQ+0+jRJfpuh0PYLc4jCAozCwUou8Jdkg3HHKVqvVWdzwaR59x3oTD8v1Ft6xO1DNkSmtZumwNVak2CLYOD0wNyeE5F1uvXai4Wn0BooiCw0KbztDEzRDuWjIlh923e9VZOH4zq5MwRXLe89ZnDnkScvPSBBbWp5aYuECdZVmOgUy6Kh8GJT+YRxmE=
+  global:
+    - secure: ieEhZRHMWnHSku/zT3WViR7Teknz/FGcD2JtrTf5NvHaIZjDyfmBCbXUzV8GpZbC8e/UmsWioMUQ8mkSkgXmh1WBwcafo6sRttNK5GVd7oCpNv5Aivdf7bWcYOuOha88bJ75O43iL89lRw53GQYi82/Q9qvYeBwVxtfyzt7qUXEUg/NNASBKe1vn0IhieYSofrikf7334h84jmRk+QYGex6hztgwg07Vji146Mq3XOrVDwgv0xd6BZ/XQjBCnUcBHvD/2sl0PxqiWD5zaQL1jwQKhURRzCQ1C8u0A19op9FA0e2tvO9QvMw/uXTgVE5q78IKFFAlAckHTRokxDMz8zj8Q+HtndVwRlsN5Vcz5MUk3cZ2nXYrT4ShNr/llphutMliPy8lRtWn02b4Wt82F/jFgfjR8l3Wnss/tnpL8XCbK968O5NYYY7XO4Kno4E2GnANvy7SSACV3i+OM+92iGWFCvyZWgsJR3iCdUKa5lyYgkIeSCQ+0+jRJfpuh0PYLc4jCAozCwUou8Jdkg3HHKVqvVWdzwaR59x3oTD8v1Ft6xO1DNkSmtZumwNVak2CLYOD0wNyeE5F1uvXai4Wn0BooiCw0KbztDEzRDuWjIlh923e9VZOH4zq5MwRXLe89ZnDnkScvPSBBbWp5aYuECdZVmOgUy6Kh8GJT+YRxmE=
+  matrix:
+    - SECRET_A=alpha
 
 script:
-- echo Safety -- alpha bravo charlie delta
-- echo $SECRET_A $(echo $SECRET_A | cut -c1-2) - Plain ENV in .yml
-- echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
-- echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
-- echo $SECRET_D $(echo $SECRET_D | cut -c1-2) - Encrypted ENV in .yml
+  - echo Safety -- alpha bravo charlie delta
+  - echo $SECRET_A $(echo $SECRET_A | cut -c1-2) - Plain ENV in .yml
+  - echo $SECRET_B $(echo $SECRET_B | cut -c1-2) - ENV in Travis shown in log
+  - echo $SECRET_C $(echo $SECRET_C | cut -c1-2) - ENV in Travis hidden from log
+  - echo $SECRET_D $(echo $SECRET_D | cut -c1-2) - Encrypted ENV in .yml
