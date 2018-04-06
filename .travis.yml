@@ -3,9 +3,8 @@ language: php
 env:
   - SECRET_A=alpha
 
-before_script:
-  - echo $SECRET_A
-
 script:
-  - echo $SECRET_A
+  - echo $SECRET_A - Plain ENV in .yml
+  - echo $SECRET_B - ENV in Travis shown in log
+  - echo $SECRET_C - ENV in Travis hidden from log
 
