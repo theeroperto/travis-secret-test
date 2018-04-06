@@ -4,6 +4,7 @@ env:
   - SECRET_A=alpha
 
 script:
+  - echo Safety -- alpha bravo charlie
   - echo $SECRET_A - Plain ENV in .yml
   - echo $SECRET_B - ENV in Travis shown in log
   - echo $SECRET_C - ENV in Travis hidden from log
